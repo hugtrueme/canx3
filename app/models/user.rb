@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   ROLES = %i[admin author]
+
+  def name
+    email.gsub(/\A\w+[^@]/).first
+  end
 end
