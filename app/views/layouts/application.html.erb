@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       <p><%= "Hello #{current_user.email}!" %></p>
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      <%= link_to('Dashboard', dashboard_index_path) %>
+      <%= link_to('Dashboard', dashboard_index_path) if can? :index, DashboardController %>
     <% else %>
       <%= link_to('Login', new_user_session_path) %>
     <% end %>

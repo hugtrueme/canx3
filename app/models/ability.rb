@@ -10,6 +10,7 @@ class Ability
     else
       can :read, Article
       can :update, Article, user_id: user.id
+      can :index, DashboardController if user.role == 'marketing'
     end
 
     # The first argument to `can` is the action you are giving the user

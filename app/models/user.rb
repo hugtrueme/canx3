@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ROLES = %i[admin author]
+  ROLES = %i[admin author marketing]
 
   def name
     email.gsub(/\A\w+[^@]/).first
